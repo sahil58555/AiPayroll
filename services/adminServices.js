@@ -72,9 +72,26 @@ const employeesByEmail = async (req, args) => {
   }
 };
 
+const employeeInfoByEmail = async (req, args) => {
+  try {
+    // Find the employee by email
+    const employee = await Employee.findOne({ email: args.email }).populate(
+      "company"
+    );
+    if (!employee) {
+      return { message: "Employee not found" };
+    }
+
+    return { message: employee };
+  } catch (err) {
+    return { error: err.message };
+  }
+};
+
 module.exports = {
   addEmployee,
   deleteEmployee,
   totalSalary,
   employeesByEmail,
+  employeeInfoByEmail
 };

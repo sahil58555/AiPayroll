@@ -1,15 +1,14 @@
 const Employee = require("../models/employeeSchema");
 const Token = require("../models/tokenSchema");
 const Payroll = require("../models/payrollSchema");
+const { employeeInfoByEmail } = require("../services/adminServices");
 
 const getEmployeeById = async (req, res) => {
   try {
-    const employee = await Employee.findOne({ email: req.user.email }).populate(
-      "company"
-    );
+    const employee = await employeeInfoByEmail(req, { email: req.user.email });
     res.status(200).json({
       status: "success",
-      employee,
+      employee: employee.message,
     });
   } catch (error) {
     res.status(500).json({

@@ -5,6 +5,7 @@ const {
   deleteEmployee,
   totalSalary,
   employeesByEmail,
+  employeeInfoByEmail
 } = require("../../services/adminServices");
 
 const toolSchemas = [
@@ -62,6 +63,23 @@ const toolSchemas = [
           id: { type: "string", description: "Employee ID" },
         },
         required: ["id"],
+      },
+    },
+  },
+  {
+    type: "function",
+    function: {
+      name: "getEmployeeDetails",
+      description: "Get specific employee details by email address",
+      parameters: {
+        type: "object",
+        properties: {
+          email: {
+            type: "string",
+            description: "Email address of the employee to retrieve details for",
+          },
+        },
+        required: ["email"],
       },
     },
   },
@@ -138,6 +156,8 @@ async function executeFunction(req, fnName, args) {
       return await addEmployee(req, args);
     } else if (fnName === "deleteEmployee") {
       return await deleteEmployee(req, args);
+    } else if (fnName === "getEmployeeDetails") {
+      return await employeeInfoByEmail(req, args);
     } else if (fnName === "paySalary") {
       return {
         message: "Please initiate salary payment from the wallet.",
