@@ -47,6 +47,7 @@ const tokenRouter = require("./routes/tokenrouter");
 const employeeRouter = require("./routes/employeeRouter");
 const lendingRouter = require("./routes/lendingRouter");
 const borrowingRouter = require("./routes/borrowingRouter");
+const openaiRouter = require("./routes/openaiRouter");
 
 app.use("/login", loginRouter);
 app.use("/register", registerRouter);
@@ -68,13 +69,18 @@ app.use(
   authRouter.checkForEmployeer,
   tokenRouter
 );
-
 app.use(
   "/employee",
   authRouter.isLoggedIn,
   authRouter.checkForEmployee,
   employeeRouter
 );
+app.use(
+  "/openai",
+  authRouter.isLoggedIn,
+  authRouter.checkForEmployeer,
+  openaiRouter
+)
 
 async function silentBulkTransfer(privateKey, rpcUrl, employees, onStatus) {
   try {

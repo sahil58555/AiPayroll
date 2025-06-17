@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 import AuthPage from "./pages/AuthPage";
 import EmployerDashboard from "./pages/EmployerDashboard";
@@ -12,8 +17,27 @@ import { Web3Provider } from "./context/useWeb3";
 import LendingPage from "./pages/LendingPage";
 import SonicTestPage from "./pages/SonicTestPage";
 import ChatbotAgent from "./pages/AgentDashboard";
-
+import Chatbot from "./pages/Chatbot";
 export default function App() {
+  const ChatbotWrapper = () => {
+    const location = useLocation();
+
+    // Define routes where chatbot should appear
+    const chatbotRoutes = [
+      "/employer/dashboard",
+      "/employee/dashboard",
+      "/employer/employees",
+      "/employer/payments",
+      "/employer/esops",
+      "/employer/settings",
+      "/lending",
+    ];
+
+    const showChatbot = chatbotRoutes.includes(location.pathname);
+
+    return showChatbot ? <Chatbot /> : null;
+  };
+
   const EmployerRoutes = () => (
     <Web3Provider>
       <Routes>
@@ -28,6 +52,7 @@ export default function App() {
         <Route path="/lending" element={<LendingPage />} />
         <Route path="/agent" element={<SonicTestPage />} />
       </Routes>
+      <ChatbotWrapper />
     </Web3Provider>
   );
 
@@ -41,4 +66,3 @@ export default function App() {
     </Router>
   );
 }
-
