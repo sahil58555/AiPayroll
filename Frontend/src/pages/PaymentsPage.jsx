@@ -15,6 +15,7 @@ import { backendDomain } from "../constant/domain";
 import { useWeb3 } from "../context/useWeb3";
 import { executeBulkTransfer } from "../blockchain/scripts/Token";
 import { verifyToken } from "../utils/jwt";
+import CronJobScheduler from "../components/payments/CronJobScheduler";
 
 export default function PaymentsPage() {
   const [showQuickPayModal, setShowQuickPayModal] = useState(false);
@@ -212,6 +213,9 @@ export default function PaymentsPage() {
 
           {/* Analytics Section */}
           <PayrollAnalytics />
+
+          {/* Cron Job Scheduler */}
+          <CronJobScheduler />
         </div>
       </main>
 
