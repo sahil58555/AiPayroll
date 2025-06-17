@@ -424,5 +424,5 @@ async def hello(ctx):
     """A simple command for testing."""
     await ctx.send(f"Hello, {ctx.author.name}!")
 
-# Run the bot
-bot.run('MTM0MTAxNDQ1MTExMzE2NDgxMA.GTW8ac.ziV-dsrWBsIfoWS9vwk_HoxMTBB926LGMFKZJ4')  # Replace 'YOUR_BOT_TOKEN' with your actual bot token
+# # Run the bot
+# bot.run('MTM0MTAxNDQ1MTExMzE2NDgxMA.GTW8ac.ziV-dsrWBsIfoWS9vwk_HoxMTBB926LGMFKZJ4')  # Replace 'YOUR_BOT_TOKEN' with your actual bot token
