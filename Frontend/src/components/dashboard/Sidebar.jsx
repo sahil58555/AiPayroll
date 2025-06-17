@@ -10,15 +10,16 @@ import {
   LogOut,
   Bot,
 } from "lucide-react";
+import { projectName } from "../../constant/project";
 
 const menuItems = [
   { icon: LayoutDashboard, label: "Dashboard", path: "/employer/dashboard" },
   { icon: Users, label: "Employees", path: "/employer/employees" },
   { icon: BadgeDollarSign, label: "Payments", path: "/employer/payments" },
-  { icon: Bot, label: "PayZoll Agent", path: "/employer/agent" },
   { icon: Award, label: "ESOPS/RSU", path: "/employer/esops" },
   { icon: Settings, label: "Settings", path: "/employer/settings" },
 ];
+
 
 export default function Sidebar({
   isWalletConnected,
@@ -37,16 +38,10 @@ export default function Sidebar({
       <div className="flex flex-col h-full">
         {/* Company Name */}
         <div className="p-6 border-b border-gray-800 flex flex-col gap-y-3">
-          <Link to="/employer/dashboard" className="block">
+          <Link to="/" className="block">
             <h1 className="text-xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
-              PayZoll
+              {projectName}
             </h1>
-          </Link>
-          <Link
-            to="https://web-agent-client.onrender.com"
-            className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-2 rounded-full hover:shadow-lg hover:shadow-indigo-500/20 transition-all"
-          >
-            Payroll Agent
           </Link>
         </div>
 

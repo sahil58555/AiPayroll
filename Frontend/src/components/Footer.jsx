@@ -1,5 +1,6 @@
 import React from "react";
 import { Wallet2, Twitter, Linkedin, Github } from "lucide-react";
+import { projectName } from "../constant/project";
 
 export default function Footer() {
   return (
@@ -9,7 +10,7 @@ export default function Footer() {
           <div className="space-y-4">
             <div className="flex items-center">
               <Wallet2 className="h-8 w-8 text-indigo-500" />
-              <span className="ml-2 text-xl font-bold text-white">PayZoll</span>
+              <span className="ml-2 text-xl font-bold text-white">{projectName}</span>
             </div>
             <p className="text-gray-400">
               Next-generation crypto payroll platform for the modern workforce
@@ -116,7 +117,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} PayZoll. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} {projectName}. All rights reserved.</p>
         </div>
       </div>
     </footer>

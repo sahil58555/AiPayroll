@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import { projectName } from "../constant/project";
 
 type Feature = {
   id: number;
@@ -41,7 +42,7 @@ const Working = () => {
       <h1 className="text-4xl font-bold">
         Why Choose{" "}
         <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500">
-          PayZoll
+          {projectName}
         </span>
         ?
       </h1>

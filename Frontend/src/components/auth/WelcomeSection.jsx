@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Wallet2, Shield, Globe, Cpu, Blocks } from "lucide-react";
+import { projectName } from "../../constant/project";
 
 function WelcomeSection({ isLogin }) {
   return (
@@ -79,7 +80,7 @@ function WelcomeSection({ isLogin }) {
           <h1 className="text-4xl font-bold">
             {isLogin ? "Welcome Back to " : "Register Your Company with "}
             <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
-              PayZoll
+              {projectName}
             </span>
           </h1>
 

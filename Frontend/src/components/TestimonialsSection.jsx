@@ -1,4 +1,5 @@
 import React from "react";
+import { projectName } from "../constant/project";
 
 const testimonials = [
   {
@@ -6,7 +7,7 @@ const testimonials = [
     position: "HR Officer at Mailchimp",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150&h=150",
     feedback:
-      "My favorite thing about PayZoll is the compliance aspect. They make quarterly taxes, onboarding, and everything else so simple and easy, which saves me a ton of time.",
+      `My favorite thing about ${projectName} is the compliance aspect. They make quarterly taxes, onboarding, and everything else so simple and easy, which saves me a ton of time.`,
   },
   {
     name: "Chatalyne Devan",
@@ -20,7 +21,7 @@ const testimonials = [
     position: "HR Officer at Basecamp",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150&h=150",
     feedback:
-      "PayZoll helped me a lot especially with the attendance, so now the marketing team can check in and leave with the offsite application. The payroll process is also very fast.",
+      `${projectName} helped me a lot especially with the attendance, so now the marketing team can check in and leave with the offsite application. The payroll process is also very fast.`,
   },
 ];
 

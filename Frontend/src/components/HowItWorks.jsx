@@ -1,5 +1,6 @@
 import React from "react";
 import { UserPlus, Wallet, Calendar, CreditCard } from "lucide-react";
+import { projectName } from "../constant/project";
 
 const steps = [
   {
@@ -38,7 +39,7 @@ export default function HowItWorks() {
             A Smarter Way to Pay
           </h2>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-            Get started with PayZoll in four simple steps
+            Get started with {projectName} in four simple steps
           </p>
         </div>
 
