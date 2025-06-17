@@ -165,3 +165,6 @@ Chat with us on [GitHub Discussions](https://github.com/PayZoll/PayZoll_Hackatho
 Imagine a world where payroll is instant, secure, and effortless—across continents, currencies, and companies. That’s PayZoll. With blockchain scalability, AI intelligence, and a vision for growth, we’re not just building a product; we’re shaping the future of work.
 
 **Star us** ⭐ | **Fork us** 🍴 | **Build with us** 🚀
+
+Chainlink Automation link - https://automation.chain.link/sepolia/95083906629087544552962016293148585431586846192846384829667759586846815568071
+Deploy contract address - 0xAD15e52d8004826D783AB572A74344B7D3321a16 
